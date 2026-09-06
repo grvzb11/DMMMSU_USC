@@ -1,0 +1,244 @@
+/**
+ * Developed by: George Rexy Vincent Z. Bacani
+ * College: College of Information Technology
+ * Role: System Developer / Front-End Developer
+ * Development Year: 2026–2027
+ * Institution: Don Mariano Marcos Memorial State University
+ * Version: v1.0
+ * Email: rexygeorge11@gmail.com
+ * Copyright: © 2026–2027. All rights reserved.
+ */
+
+/* Unified campus home pages: same USC structure, campus-specific identity */
+
+.campus-site-header .campus-brand img {
+    object-fit: contain !important;
+    background: #fff !important;
+    padding: 2px !important;
+    border: 1px solid #e3e9e5 !important;
+}
+
+.campus-site-header .campus-brand strong {
+    font-size: 17px !important;
+}
+
+.campus-site-header .campus-brand small {
+    font-size: 10px !important;
+}
+
+.campus-site-header .main-nav>a.active {
+    color: var(--campus-accent) !important;
+}
+
+.campus-site-header .submit-cta {
+    background: var(--campus-accent) !important;
+}
+
+.campus-primary-slide {
+    background: linear-gradient(115deg,var(--campus-accent-2),var(--campus-accent) 61%,color-mix(in srgb,var(--campus-accent) 72%,#42a56d)) !important;
+}
+
+.campus-news-slide {
+    background: linear-gradient(115deg,color-mix(in srgb,var(--campus-accent-2) 75%,#143b56),var(--campus-accent) 62%,#187d50) !important;
+}
+
+.campus-identity-panel {
+    padding: 30px !important;
+}
+
+.campus-identity-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 22px 0 18px;
+}
+
+.campus-identity-row img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #e2e8e4;
+    padding: 4px;
+}
+
+.campus-identity-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campus-identity-row strong {
+    font-family: Manrope,Inter,sans-serif;
+    font-size: 24px;
+    line-height: 1.12;
+    color: #10251a;
+}
+
+.campus-identity-row small {
+    font-size: 12px;
+    color: #6b7770;
+}
+
+.campus-identity-panel>p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 22px !important;
+}
+
+.campus-metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.campus-metric-grid div {
+    border: 1px solid #e1e7e3;
+    border-radius: 12px;
+    padding: 13px 14px;
+    background: #f8faf9;
+}
+
+.campus-metric-grid strong {
+    display: block;
+    font-size: 22px;
+    color: var(--campus-accent);
+}
+
+.campus-metric-grid span {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #6d7972;
+}
+
+.campus-shortcuts .shortcut-icon.green {
+    background: var(--campus-accent) !important;
+}
+
+.campus-intro-strip {
+    border-bottom: 1px solid #e5ebe7;
+    background: #fff;
+}
+
+.campus-intro-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 42px 0;
+}
+
+.campus-intro-inner h2 {
+    font-family: Manrope,Inter,sans-serif;
+    font-size: 32px;
+    margin: 7px 0 5px;
+    letter-spacing: -.03em;
+}
+
+.campus-intro-inner p {
+    margin: 0;
+    color: #657169;
+}
+
+.usc-main-link,.view-all-campus {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d7e2db;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--campus-accent);
+    background: #fff;
+}
+
+.usc-main-link:hover,.view-all-campus:hover {
+    border-color: var(--campus-accent);
+    background: #f6faf7;
+}
+
+.campus-latest-tools {
+    align-items: flex-end !important;
+}
+
+.campus-latest-tools .search-box {
+    min-width: 300px;
+}
+
+.campus-footer {
+    border-top: 1px solid #e3e9e5;
+}
+
+.campus-home .news-thumb:not(.has-cover) {
+    background: color-mix(in srgb,var(--campus-accent) 10%,#f5f8f6) !important;
+}
+
+.campus-home .news-thumb:not(.has-cover) span {
+    color: var(--campus-accent) !important;
+}
+
+.campus-home .page-number.active,.campus-home .page-nav:hover {
+    background: var(--campus-accent) !important;
+    color: #fff !important;
+}
+
+.campus-home .latest-dynamic-lead .latest-badge {
+    background: var(--campus-accent) !important;
+}
+
+.campus-home .hero-dots button.active {
+    background: #fff !important;
+}
+
+@media (max-width:900px) {
+    .campus-intro-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .campus-identity-row strong {
+        font-size: 20px;
+    }
+    .campus-metric-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .campus-latest-tools {
+        align-items: stretch !important;
+    }
+    .campus-latest-tools .search-box {
+        min-width: 0;
+    }
+}
+
+@media (max-width:620px) {
+    .campus-identity-row img {
+        width: 62px;
+        height: 62px;
+    }
+    .campus-identity-row strong {
+        font-size: 17px;
+    }
+    .campus-metric-grid {
+        grid-template-columns: 1fr;
+    }
+    .campus-intro-inner h2 {
+        font-size: 26px;
+    }
+}
+
+/* Central USC navigation CTA: intentionally fixed across every campus identity. */
+
+.campus-site-header .submit-cta {
+    background: #145a3a !important;
+    color: #fff !important;
+    border: 1px solid #145a3a !important;
+    box-shadow: none !important;
+}
+
+.campus-site-header .submit-cta:hover {
+    background: #0f472e !important;
+    border-color: #0f472e !important;
+    color: #fff !important;
+}

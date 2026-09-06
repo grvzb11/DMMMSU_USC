@@ -1,0 +1,374 @@
+/**
+ * Developed by: George Rexy Vincent Z. Bacani
+ * College: College of Information Technology
+ * Role: System Developer / Front-End Developer
+ * Development Year: 2026–2027
+ * Institution: Don Mariano Marcos Memorial State University
+ * Version: v1.0
+ * Email: rexygeorge11@gmail.com
+ * Copyright: © 2026–2027. All rights reserved.
+ */
+
+/* E-Sumbong review page-specific evidence picker.
+Kept separate from admin.css so unrelated admin UI updates cannot regress this component. */
+.case-evidence-upload {
+    margin-top: 9px;
+    padding: 11px 12px;
+    border: 1px solid #d8e6de;
+    border-radius: 12px;
+    background: #fff;
+}
+.case-evidence-upload__head,
+.case-evidence-upload__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.case-evidence-upload__head { margin-bottom: 7px; }
+.case-evidence-upload__info { min-width: 0; }
+.case-evidence-upload__info strong {
+    display: block;
+    color: #153c2b;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+.case-evidence-upload__info small,
+.case-evidence-upload__formats,
+.case-evidence-upload__limit {
+    color: #718279;
+    font-size: 8.5px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+.case-evidence-upload__formats { flex: 0 0 auto; text-align: right; }
+.case-evidence-upload__controls {
+    justify-content: flex-start;
+    padding-top: 0;
+}
+.case-evidence-upload .case-upload-picker {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+}
+.case-evidence-upload .case-upload-picker__input {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+.case-evidence-upload .case-upload-picker__button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 32px !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+    border: 1px solid #9cc9b2 !important;
+    border-radius: 8px !important;
+    background: #f8fcf9 !important;
+    color: #0a653f !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    transition: background .16s ease, border-color .16s ease, box-shadow .16s ease !important;
+}
+.case-evidence-upload .case-upload-picker__button:hover {
+    background: #eef8f2 !important;
+    border-color: #63aa83 !important;
+}
+.case-evidence-upload .case-upload-picker__input:focus-visible + .case-upload-picker__button {
+    box-shadow: 0 0 0 3px rgba(15, 113, 74, .12) !important;
+}
+.case-evidence-upload__files {
+    display: grid;
+    gap: 5px;
+    margin-top: 7px;
+}
+.case-evidence-upload__empty {
+    padding: 9px 11px;
+    border: 1px dashed #d5e3db;
+    border-radius: 8px;
+    background: #fbfdfc;
+    color: #7b8a82;
+    font-size: 8.5px;
+    font-weight: 600;
+}
+.case-evidence-upload__file {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 28px;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid #e0ebe5;
+    border-radius: 9px;
+    background: #f9fcfa;
+}
+.case-evidence-upload__type {
+    display: grid;
+    width: 34px;
+    height: 28px;
+    place-items: center;
+    border-radius: 7px;
+    background: #e6f3eb;
+    color: #0d6844;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: .03em;
+}
+.case-evidence-upload__file-details {
+    min-width: 0;
+}
+.case-evidence-upload__file-details strong {
+    display: block;
+    overflow: hidden;
+    color: #183e2d;
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.case-evidence-upload__file-details small {
+    display: block;
+    margin-top: 2px;
+    color: #7a8981;
+    font-size: 7.5px;
+    font-weight: 600;
+}
+.case-evidence-upload__remove {
+    display: inline-grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #d5e2db;
+    border-radius: 999px;
+    background: #fff;
+    color: #65776e;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+.case-evidence-upload__remove:hover {
+    border-color: #b8ccc1;
+    background: #f1f7f3;
+    color: #173e2d;
+}
+@media (max-width: 560px) {
+    .case-evidence-upload { padding: 12px; }
+    .case-evidence-upload__head { align-items: flex-start; }
+    .case-evidence-upload__formats { max-width: 120px; }
+    .case-evidence-upload__controls {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .case-evidence-upload .case-upload-picker__button { min-height: 36px !important; }
+}
+
+/* Compact evidence panel: the file-count/size limit is intentionally omitted here.
+Server-side upload validation remains unchanged. */
+.case-evidence-upload__limit {
+    display: none !important;
+}
+
+/* Keep the footer close to the evidence panel without changing its actions. */
+.case-editor-more__body .case-evidence-upload + * {
+    margin-top: 0 !important;
+}
+
+/* Inline close-status validation: keep case handlers in the review workflow. */
+.case-resolution-field textarea[aria-invalid="true"] {
+    border-color: #c95f5f !important;
+    box-shadow: 0 0 0 3px rgba(181, 54, 54, .08) !important;
+}
+.case-resolution-error {
+    display: block;
+    margin-top: 6px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    background: #fff2f2;
+    color: #9b3030;
+    font-size: 8.5px;
+    font-weight: 750;
+    line-height: 1.35;
+}
+.case-resolution-error[hidden] {
+    display: none !important;
+}
+
+/* Saved administrator evidence remains visible beside the upload workflow. */
+.case-evidence-saved {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e5ede8;
+}
+.case-evidence-saved__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+.case-evidence-saved__head strong {
+    color: #173e2d;
+    font-size: 10px;
+    font-weight: 800;
+}
+.case-evidence-saved__head span {
+    color: #73847b;
+    font-size: 8px;
+    font-weight: 700;
+}
+.case-evidence-saved__list {
+    display: grid;
+    gap: 5px;
+}
+.case-evidence-saved__item {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 7px 8px;
+    border: 1px solid #e0e9e4;
+    border-radius: 9px;
+    background: #fbfdfc;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .16s ease, background .16s ease;
+}
+.case-evidence-saved__item:hover {
+    border-color: #bfd7ca;
+    background: #f4faf7;
+}
+.case-evidence-saved__type {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #e9f5ee;
+    color: #0d6a46;
+    font-size: 8px;
+    font-weight: 850;
+}
+.case-evidence-saved__details {
+    display: block;
+    min-width: 0;
+}
+.case-evidence-saved__details strong,
+.case-evidence-saved__details small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.case-evidence-saved__details strong {
+    color: #173e2d;
+    font-size: 9px;
+    font-weight: 750;
+}
+.case-evidence-saved__details small {
+    margin-top: 2px;
+    color: #7c8b83;
+    font-size: 8px;
+}
+.case-evidence-saved__action {
+    color: #0d6a46;
+    font-size: 8px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+@media (max-width: 520px) {
+    .case-evidence-saved__item {
+        grid-template-columns: 28px minmax(0, 1fr);
+    }
+    .case-evidence-saved__action {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+
+
+/* Dynamic case workflow: only show referral/resolution fields when the selected status needs them. */
+.case-status-context[hidden] {
+    display: none !important;
+}
+.case-editor-section--evidence .case-evidence-upload {
+    margin-top: 0;
+}
+.case-editor-section--evidence .case-evidence-upload__info strong {
+    font-size: 10px;
+}
+.case-status-context {
+    background: #fbfdfc;
+}
+#caseReferralSection .case-editor-section__head h3,
+#caseResolutionSection .case-editor-section__head h3 {
+    color: #0e6945 !important;
+}
+
+/* Saved case evidence actions: download + explicit removal. */
+.case-evidence-saved__actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    white-space: nowrap;
+}
+.case-evidence-saved__action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 7px;
+    border-radius: 7px;
+    color: #0d6a46;
+    font-size: 8px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.case-evidence-saved__action:hover {
+    background: #eef8f2;
+}
+.case-evidence-saved__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 26px;
+    padding: 0 8px;
+    border: 1px solid #dfc9c9;
+    border-radius: 7px;
+    background: #fff;
+    color: #a14444;
+    font: inherit;
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: none;
+}
+.case-evidence-saved__remove:hover {
+    border-color: #cfa7a7;
+    background: #fff5f5;
+    color: #8d3030;
+}
+@media (max-width: 520px) {
+    .case-evidence-saved__actions {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
