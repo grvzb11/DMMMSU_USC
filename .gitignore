@@ -1,0 +1,11 @@
+.env
+/storage/logs/*.log
+/storage/logs/archive/*.log
+/storage/cache/*
+/backups/*.sql
+/backups/*.zip
+!/storage/logs/.gitkeep
+!/storage/cache/.gitkeep
+!/backups/.gitkeep
+
+/storage/keys/data.key

@@ -1,0 +1,21 @@
+Options -Indexes
+ServerSignature Off
+
+
+# Large News & Updates / Media Library uploads when PHP runs as an Apache module.
+# The IfModule guard prevents these directives from breaking CGI/FastCGI hosting.
+<IfModule php_module>
+    php_value upload_max_filesize 256M
+    php_value post_max_size 300M
+    php_value max_file_uploads 120
+    php_value max_input_time 600
+    php_flag display_errors Off
+</IfModule>
+
+<FilesMatch "(^\.env|\.sql$|\.log$|\.bak$|\.ini$|composer\.(json|lock)$|\.md$)">
+    Require all denied
+</FilesMatch>
+
+ErrorDocument 403 /DMMMSU_USC/errors/403.php
+ErrorDocument 404 /DMMMSU_USC/errors/404.php
+ErrorDocument 500 /DMMMSU_USC/errors/500.php
